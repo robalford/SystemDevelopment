@@ -25,6 +25,6 @@ class Wikipedia(object):
         try:
             contents = json_response['parse']['text']['*']
         except KeyError:
-            raise ParseError(json_response)
+            raise ParseError("Your search for {} did not return any results.".format(title))
 
         return contents

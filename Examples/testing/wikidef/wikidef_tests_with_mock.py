@@ -27,10 +27,11 @@ class WikiDefTest(unittest.TestCase):
         article = Definitions.article("Robot")        
         mock_method.assert_called_once_with("Robot")
 
-    @patch.object(Wikipedia, 'article')
-    def test_article_success_decorator_mocked(self, mock_method):
-        article = Definitions.article("Robot")        
-        mock_method.assert_called_once_with("Robot")
+    @patch('definitions.Wikipedia.article')
+    def test_article_failure_decorator_mocked(self, mock_method):
+        title = 'lksjdflksjdl'
+        article = Definitions.article(title)
+        mock_method.assertRaises(ParseError, article, "Your search for {} did not return any results.".format(title))
 
     # patch with a context manager
     def test_article_success_context_manager_mocked(self):
