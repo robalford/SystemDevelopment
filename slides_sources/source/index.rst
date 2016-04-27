@@ -37,8 +37,6 @@ Session 2
 
 .. rst-class:: left
 
-  - :ref:`serialization`
-
   - :ref:`testing`
 
 
@@ -47,11 +45,9 @@ Session 3
 
 .. rst-class:: left
 
-  - :ref:`packaging`
+  - :ref:`serialization`
 
-  - :ref:`documentation`
-
-  - Code Reviewing
+  - :ref:`code_review`
 
 
 Session 4
@@ -61,17 +57,18 @@ Code Reviews begin
 
 .. rst-class:: left
 
-  - :ref:`nosql`
+  - :ref:`packaging`
 
-  - `datetime <html_slides/06-datetime.html>`_
+  - :ref:`documentation`
 
 
 Session 5
 =========
 .. rst-class:: left
 
-  - :ref:`scipy`
+  - :ref:`nosql`
 
+  - :ref:`scipy`
 
 Session 6
 =========
@@ -95,6 +92,8 @@ Session 8
 
 .. rst-class:: left
 
+  - `datetime <html_slides/06-datetime.html>`_
+
   - Performance and Profiling
 
 Session 9
@@ -102,7 +101,7 @@ Session 9
 
 .. rst-class:: left
 
-  - GUI development: wxPython
+  - :ref:wxpython
 
 
 Session 10

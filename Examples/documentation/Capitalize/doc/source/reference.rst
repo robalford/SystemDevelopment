@@ -1,10 +1,17 @@
-=====================
-Capitalize Reference
-=====================
+=============
+Lib Reference
+=============
 
-Here are the reference docs for Capitalize
+the reference docs
+
+The capitalize packge
+=====================
 
 .. automodule:: capitalize
 
+capital_mod module
+-------------------
+
 .. automodule:: capitalize.capital_mod
    :members:
+

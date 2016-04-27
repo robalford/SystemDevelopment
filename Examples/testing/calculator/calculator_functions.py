@@ -15,10 +15,8 @@ def add(x, y):
 def subtract(x, y):
     return int(x) - int(y)
 
-
 def multiply(x, y):
     return int(x) * int(y)
-
 
 def divide(x, y):
     return int(x) / int(y)

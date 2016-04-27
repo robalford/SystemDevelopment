@@ -141,7 +141,7 @@ It is python code, so you can add anything custom you need to it
 But in the simple case, it is essentially declarative.
 
 
-``http://docs.python.org/2/distutils/``
+``http://docs.python.org/3/distutils/``
 
 
 .. nextslide::
@@ -295,6 +295,10 @@ Develop mode is *really* *really* nice::
 
   python setup.py develop
 
+or::
+
+  pip install -e ./
+
 It puts links into the python installation to your code, so that your package is installed, but any changes will immediately take effect.
 
 This way all your test code, and client code, etc, can all import your package the usual way.
@@ -305,6 +309,57 @@ Good idea to use it for anything more than a single file project.
 
 (requires ``setuptools``)
 
+Running tests
+-------------
+
+It can be a good idea to set up yoru tests to be run from ``setup.py``
+
+So that you (or your users) can:
+
+.. code-block:: bash
+
+  $ pip install .
+  $ python setup.py test
+
+Do do this, you need to add a ``test_suite`` stanza in setup.py.
+
+**nose**
+
+.. code-block:: python
+
+  setup (
+      # ...
+      test_suite = 'nose.collector'
+  )
+
+**pytest**
+
+.. code-block:: python
+
+  setup(
+    #...,
+    setup_requires=['pytest-runner', ...],
+    tests_require=['pytest', ...],
+    #...,
+  )
+
+And create an alias into setup.cfg file::
+
+  [aliases]
+  test=pytest
+
+https://pytest.org/latest/goodpractices.html#integrating-with-setuptools-python-setup-py-test-pytest-runner
+
+**unittest**
+
+.. code-block:: python
+
+
+  test_suite="tests"
+
+(does py3 unittest have this??)
+
+
 Getting Started
 ----------------
 
@@ -314,7 +369,7 @@ For anything but a single-file script (and maybe even then):
 
 2. Write a ``setup.py``
 
-3. ``python setup.py develop``
+3. ``python -m pip install -e .``
 
 4. Put some tests in ``package/test``
 
@@ -322,7 +377,7 @@ For anything but a single-file script (and maybe even then):
 
 
 LAB
------
+---
 
 * Create a small package
 
@@ -337,7 +392,7 @@ LAB
 
 * If you are ready -- it can be the start of your project package.
 
-(example in ``code/Capitalize``)
+(otherwise you may start with the silly code in ``Examples/capitalize``)
 
 
 
